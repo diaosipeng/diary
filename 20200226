@@ -13,9 +13,20 @@ git基操：git可以说是一个工具，github是一个托管平台。
                                                 git pull      #用来拉取github上的内容，如果一致，屁都拉不到
                                                 git checkout      #用来检出分支，，，暂时只会用来回复不慎删除的文件[苦笑]
                                                 git branch    #创建分支
+ 今天还把一个Python小脚本做test，发到github上练习了一下！！
+
+
+然后是关于crontab的进一步熟悉，以前都是用来定时执行shell脚本，所以没注意这么多。
+今天用来执行Python脚本，总结了很多经验：
+            1.source声明环境变量很有必要
+            2.如未用source，也可以直接填写Python的路径，可以用which Python查看
+                  eg：* * * * * source ~/.bashrc;python ~/文档/python_script/1.py
+                           * * * * * /usr/bin/pyhton ~/文档/python_script/1.py
 
 
 
 
-    今天还把一个Python小脚本做test，发到github上练习了一下！！
+
+
+
             继续在小白的路上挣扎--------
