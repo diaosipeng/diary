@@ -1,0 +1,36 @@
+打卡第二天，好累啊，今天被折磨惨了
+今天主要就谢了一个爬虫和一个yagmail的自动发邮件
+        爬虫：看到一个美女图片推荐api，顿时起了点兴趣，马上行动起来。踩了很多坑，收获还是有的
+                    １．那个api用  get(api).text后得到的是一个json文件格式，不能直接用于python处理，用json.loads()处理后就可以了
+                    ２．学会了内置模块localtime的基本使用
+                            def getTime(): 
+                                 time = t.localtime() 
+                                 day = time.tm_mday 
+                                 month = time.tm_mon 
+                                if len(str(month)) == 1: 
+                                 month = '0%s' % month 
+    　　　　　　if  len(str(day)) == 1: 
+        　　　　　　day = '0%s' % day 
+    　　　　　　date = '{}{}{}'.format(time.tm_year,month,day)
+    　　　　　　return date
+                            可以返回“20200227"这种形式可用来命令文件
+                    3. 更加熟悉，理解了异常处理try-except-else-finally的强大作用，可以很好和无限循环连用
+                　４．在功能函数中学会了True和False的用法：
+                                                    eg:　def useUrl(url):
+                                                                    status = True
+                                                                    response = requests.get(url)
+                                                                    if response.status_code in [502,404]:
+                                                                        status = False
+                                                                    return response.text,status
+                                                             def other():
+                                                                    try:
+                                                                        text,status = useUrl(url)
+                                                                        if statuse = False:
+                                                                            raise AttituteError
+                                                                        except:
+                                                                            print("出错了")
+                    5.还熟悉了requests的get方法的timeout方法,这个对于批量爬虫很有用，可以剔除连接超时的网址
+                                    eg:     requests.get(url,timeout=2)     /#和前面的True&False连用可以剔除连接不通畅的和404,502的网址
+    　          6.os库很好用，作为一个linux狂热粉{哭笑}
+
+　　还有今天网不好，麻蛋，下载个树莓派lite版，半天没下载完[气死我了]
