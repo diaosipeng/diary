@@ -1,0 +1,32 @@
+今天写了一个多线程爬虫失败案例(滑稽脸),还看了下微信小程序官方文档
+
+多线程爬虫:1.如果不并发编程,那么就会串行处理,进行批量处理时效率不高 ------------并不表示一定会提高总运行速度,这是多进程的事
+2.使用threading和queue搭配可以实现生产者消费者模型
+3.threading模块,start()方法用于启动线程,join()方法用于线程执行结束后才运行线程下面的代码
+4.queue的input方法决定了先进先出的特性,但是也正因为如此,多线程爬虫无法轻易实现爬小说这种有顺序性的工作,但是爬图片确实是一把好手
+
+
+
+微信小程序:
+1.wxss引入外联样式的方法:    @import "common.wxss";,,,,内联style样式不建议动态样式,会影响渲染速度
+2.事件:这是一个重要的话题:大致提到的知识点有:bind&catch
+                                                                                                冒泡时间&非冒泡事件
+                                                                                                mut-bind互斥事件绑定:不影响bind和catch,只能有一个mut-bind响应
+                                                                                                事件捕获:捕获阶段位于冒泡阶段之前,捕获顺序和冒泡顺序相反,从外到里.capture-bind、capture-catch关键字，后者将中断捕获阶段和取消冒泡阶段
+                                                                                                事件对象:属性	类型	说明	基础库版本
+                                                                                                                    type	String	事件类型	
+                                                                                                                  timeStamp	Integer	事件生成时的时间戳	
+                                                                                                                    target	Object	触发事件的组件的一些属性值集合	
+                                                                                                                    currentTarget	Object	当前组件的一些属性值集合	
+                                                                                                                    mark	Object	事件标记数据	
+                                                                                                                    CustomEvent 自定义事件对象属性列表（继承 BaseEvent）：
+
+
+                                                                                                                    detail	Object	额外的信息
+                                                                                                                    TouchEvent 触摸事件对象属性列表（继承 BaseEvent）：
+
+
+                                                                                                                    touches	Array	触摸事件，当前停留在屏幕中的触摸点信息的数组
+                                                                                                                    changedTouches	Array	触摸事件，当前变化的触摸点信息的数组
+
+                                                                                                组件的公共属性和特殊属性
